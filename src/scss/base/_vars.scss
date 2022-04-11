@@ -1,0 +1,32 @@
+/**
+ * Variables
+*/
+
+/* Typography */
+/* Breakpoints */
+/* Paths */
+/* Grid setup */
+/* Colour palette */
+$black: #333333;
+$black-variant-1: #666666;
+$white: #fff;
+$light-gray: #f1f1f1;
+
+$body-background-color: #f6f6ee;
+$help-background-color: #ebebeb;
+$foreground-color: #fff;
+$caption-color: #464646;
+$accent-color: #999;
+$link-color: #21b0d0;
+$disclaimer-color: #a2a2a2;
+
+$breakpoints: (
+  'small':  ( min-width:  767px ),
+  'medium': ( min-width:  992px ),
+  'large':  ( min-width: 1200px )
+) !default;
+
+/* Components */
+
+// Font Variables
+$body-font: 'Open Sans', sans-serif;

@@ -1,0 +1,564 @@
+html {
+  @include fluid-type(font-size, 640px, 1476px, 14px, 16px);
+}
+
+body {
+  color: $foreground-color;
+  background: $body-background-color;
+}
+
+header {
+  z-index: 1;
+  width: 100%;
+  display: none;
+  @include absolute(top 0 left 0);
+  @include respond-to('medium') {
+    display: block;
+  }
+
+  h1 {
+    float: left;
+    color: $white;
+    margin: 20px 0 0 16vw;
+
+    a {
+      @include font-size(32);
+    }
+  }
+  nav {
+    float: right;
+    margin: 30px 10vw 0 0;
+
+    a {
+      margin-left: 30px;
+      display: inline-block;
+      @include fluid-type(font-size, 320px, 1476px, 12px, 14px);
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+main {
+  color: $black;
+  background: $body-background-color;
+}
+
+.section {
+  @include fluid-type(padding-top, 320px, 1476px, 30px, 60px);
+  @include fluid-type(padding-bottom, 320px, 1476px, 30px, 60px);
+  @include fluid-type(padding-left, 320px, 768px, 30px, 60px);
+  @include fluid-type(padding-right, 320px, 768px, 30px, 60px);
+  @include respond-to('medium') {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: 980px;
+    &.padding {
+      padding: 20px 25px;
+      @include respond-to('medium') {
+        padding: 40px 50px;
+      }
+    }
+  }
+  p {
+    color: $black;
+    line-height: 24px;
+    @include font-size(16);
+  }
+  .content {
+    @include respond-to('medium') {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: normal;
+      align-content: normal;
+
+      .box {
+        display: block;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        align-self: auto;
+        order: 0;
+      }
+    }
+  }
+}
+
+.section-hero-banner {
+  padding: 0;
+
+  .hero-banner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 605px;
+    background-size: cover;
+    background-image: url("../images/content/hero-banner-mobile.jpg");
+    @include retina("../images/content/hero-banner-mobile@2x.jpg", 100%, 100%);
+    @include respond-to('medium') {
+      min-height: 821px;
+      background-image: url("../images/content/hero-banner.jpg");
+      @include retina("../images/content/hero-banner@2x.jpg", 100%, 100%);
+    }
+  }
+  figcaption {
+    width: 100%;
+    max-width: 85vw;
+    transform: translate(-50%, -50%);
+    @include absolute(top 50% left 50%);
+    @include respond-to('medium') {
+      max-width: 43vw;
+      transform: none;
+      @include absolute(top 25vh left 37vw);
+    }
+    @include respond-to('large') {
+      max-width: 33vw;
+      transform: none;
+      @include absolute(top 25vh left 47vw);
+    }
+
+    h2 {
+      color: $white;
+      @include fluid-type(font-size, 320px, 1476px, 30px, 60px);
+    }
+    p {
+      color: $white;
+      @include fluid-type(font-size, 320px, 1476px, 14px, 22px);
+      @include fluid-type(padding-top, 320px, 1476px, 20px, 40px);
+    }
+  }
+}
+
+.section-creative {
+  padding-bottom: 0;
+
+  .banner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 253px;
+    background-size: cover;
+    background-image: url("../images/content/banner-1-mobile.jpg");
+    @include retina("../images/content/banner-1-mobile@2x.jpg", 100%, 100%);
+    @include respond-to('medium') {
+      background-image: url("../images/content/banner-1.jpg");
+      @include retina("../images/content/banner-1@2x.jpg", 100%, 100%);
+    }
+  }
+  .container {
+    background-color: $foreground-color;
+  }
+  .content {
+    @include fluid-type(padding-top, 320px, 1476px, 25px, 45px);
+
+    .box {
+      padding-top: 25px;
+      &:first-child {
+        padding-top: 0;
+        @include respond-to('medium') {
+          padding-right: 50px;
+        }
+
+        img {
+          max-width: 213px;
+          @include respond-to('medium') {
+            max-width: 426px;
+          }
+        }
+      }
+    }
+  }
+  h3 {
+    @include fluid-type(font-size, 320px, 1476px, 18px, 36px);
+  }
+  p {
+    @include fluid-type(font-size, 320px, 1476px, 14px, 20px);
+    @include fluid-type(padding-top, 320px, 1476px, 15px, 25px);
+  }
+}
+
+.section-stories {
+  .content {
+    @include fluid-type(padding-top, 320px, 1476px, 25px, 50px);
+
+    .box {
+      overflow: hidden;
+      @include fluid-type(margin-top, 320px, 1476px, 20px, 40px);
+      @include respond-to('medium') {
+        width: 50%;
+        margin: 0 15px;
+        @include fluid-type(padding-top, 320px, 1476px, 20px, 40px);
+      }
+      &:first-child {
+        padding-top: 0;
+        margin-left: 0;
+        margin-top: 0;
+
+        img {
+          max-width: 231px;
+          margin-top: -15px;
+          @include respond-to('medium') {
+            max-width: 462px;
+            margin-right: -20px;
+          }
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+        position: relative;
+
+        img {
+          max-width: 256px;
+          @include respond-to('medium') {
+            max-width: 512px;
+            margin: 0 auto;
+            @include absolute(bottom 0 left -20px);
+          }
+        }
+      }
+      background-color: $foreground-color;
+    }
+  }
+  h2 {
+    @include fluid-type(font-size, 320px, 1476px, 20px, 50px);
+  }
+  h3 {
+    @include fluid-type(font-size, 320px, 1476px, 18px, 36px);
+    padding: 25px 20px;
+    @include respond-to('medium') {
+      padding: 50px 40px 25px;
+    }
+  }
+  p {
+    padding: 0 20px 25px;
+    @include respond-to('medium') {
+      padding: 0 40px 50px;
+    }
+    @include fluid-type(font-size, 320px, 1476px, 12px, 18px);
+  }
+}
+
+.section-student-and-teacher {
+  padding-top: 0;
+  background-color: $foreground-color;
+  &.section-banner {
+    padding: 0;
+    .banner {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 183px;
+      background-size: cover;
+      background-image: url("../images/content/banner-2-mobile.jpg");
+      @include retina("../images/content/banner-2-mobile@2x.jpg", 100%, 100%);
+      @include respond-to('medium') {
+        min-height: 265px;
+        background-image: url("../images/content/banner-2.png");
+        @include retina("../images/content/banner-2@2x.png", 100%, 100%);
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+    @include fluid-type(font-size, 320px, 1476px, 25px, 56px);
+    @include fluid-type(padding-top, 320px, 1476px, 30px, 60px);
+  }
+  p {
+    text-align: center;
+    @include fluid-type(font-size, 320px, 1476px, 12px, 20px);
+    @include fluid-type(padding-top, 320px, 1476px, 15px, 30px);
+  }
+  .content {
+    @include fluid-type(padding-top, 320px, 1476px, 50px, 100px);
+
+    .box {
+      width: 100%;
+      @include fluid-type(padding-top, 320px, 768px, 30px, 60px);
+      @include respond-to('medium') {
+        padding-top: 0;
+      }
+      &:first-child {
+        padding-top: 0;
+        padding-left: 0;
+
+        h3 {
+          &:before {
+              content: "";
+              display: block;
+              background-image: url("../images/content/icon-2.png") no-repeat;
+              @include retina("../images/content/icon-2@2x.png", 100%, 100%);
+              width: 15px;
+              height: 19px;
+              float: left;
+              margin: 0 15px 0 0;
+              @include respond-to('small') {
+                width: 30px;
+                height: 38px;
+              }
+          }
+        }
+      }
+      &:last-child {
+        padding-right: 0;
+
+        h3 {
+          &:before {
+              content: "";
+              display: block;
+              background-image: url("../images/content/icon-1.png") no-repeat;
+              @include retina("../images/content/icon-1@2x.png", 100%, 100%);
+              width: 21px;
+              height: 21px;
+              float: left;
+              margin: 0 15px 0 0;
+              @include respond-to('small') {
+                width: 42px;
+                height: 42px;
+              }
+          }
+        }
+      }
+    }
+    h3 {
+      padding-bottom: 15px;
+      border-bottom: 1px solid #dbdbdb;
+      @include fluid-type(font-size, 320px, 1476px, 16px, 32px);
+    }
+    img {
+      display: inline-block;
+    }
+    p {
+      max-width: 90%;
+      text-align: left;
+      @include fluid-type(font-size, 320px, 1476px, 12px, 20px);
+    }
+  }
+}
+
+.section-resources {
+  .content {
+    margin: 25px 0 0;
+    @include respond-to('medium') {
+      margin: 50px 0 0;
+      &:last-child {
+        margin-top: 30px;
+      } 
+    }
+
+    .box {
+      margin: 25px 0 0;
+      padding: 20px 25px;
+      background-color: $foreground-color;
+      @include respond-to('medium') {
+        width: 50%;
+        margin: 0 15px;
+        padding: 50px 55px;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        br {
+          display: block;
+        }
+      }
+    }
+  }
+  img {
+    margin: 0;
+    max-width: 38px;
+    @include respond-to('medium') {
+      max-width: 76px;
+    }
+  }
+  h2 {
+    @include fluid-type(font-size, 320px, 1476px, 22px, 44px);
+  }
+  h3 {
+    @include fluid-type(font-size, 320px, 1476px, 18px, 36px);
+    @include fluid-type(padding-top, 320px, 1476px, 20px, 40px);
+  }
+  p {
+    @include fluid-type(font-size, 320px, 1476px, 12px, 18px);
+    @include fluid-type(padding-top, 320px, 1476px, 10px, 20px);
+  }
+}
+
+.section-bottom-banner {
+  padding: 0;
+
+  .bottom-banner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 302px;
+    background-size: cover;
+    background-image: url("../images/content/bottom-banner-mobile.jpg");
+    @include retina("../images/content/bottom-banner-mobile@2x.jpg", 100%, 100%);
+    @include respond-to('medium') {
+      background-image: url("../images/content/bottom-banner.jpg");
+      @include retina("../images/content/bottom-banner@2x.jpg", 100%, 100%);
+    }
+  }
+  figcaption {
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    @include absolute(top 50% left 50%);
+
+    h2 {
+      color: $white;
+      @include fluid-type(font-size, 320px, 1476px, 30px, 60px);
+    }
+    p {
+      color: $white;
+      @include fluid-type(font-size, 320px, 1476px, 12px, 22px);
+      @include fluid-type(padding-top, 320px, 1476px, 15px, 30px);
+    }
+  }
+}
+
+.section-help {
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+  background-color: $help-background-color;
+
+  .content {
+    @include fluid-type(padding-top, 320px, 1476px, 30px, 60px);
+
+    .box {
+      @include respond-to('medium') {
+        margin: 0 40px;
+      }
+      &:first-child {
+        img {
+          width: 34px;
+          height: 27px;
+          @include respond-to('medium') {
+            width: 68px;
+            height: 54px;
+          }
+        }
+      }
+      &:last-child {
+        @include fluid-type(padding-top, 320px, 768px, 30px, 60px);
+        @include respond-to('medium') {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+  img {
+    width: 30px;
+    height: 30px;
+    @include respond-to('medium') {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  h2, h3 {
+    @include fluid-type(font-size, 320px, 1476px, 25px, 45px);
+  }
+  h3 {
+    @include fluid-type(font-size, 320px, 1476px, 15px, 30px);
+    @include fluid-type(padding-top, 320px, 1476px, 15px, 30px);
+  }
+  p {
+    color: $black-variant-1;
+    @include fluid-type(font-size, 320px, 1476px, 12px, 16px);
+    @include fluid-type(padding-top, 320px, 1476px, 10px, 20px);
+  }
+  a {
+    color: $link-color;
+    padding-top: 10px;
+    @include fluid-type(font-size, 320px, 1476px, 12px, 16px);
+  }
+}
+
+h1, h2, h3, p, a {
+  color: $black;
+  font-family: $body-font;
+  line-height: normal;
+  font-weight: 400;
+}
+
+p {
+  font-weight: 300;
+}
+
+a {
+  display: block;
+  color: $white;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: none;
+  @include respond-to('medium') {
+    width: auto;
+    height: auto;
+  }
+}
+
+hr {
+  border-top: 1px solid #dbdbdb;
+}
+
+br {
+  display: none;
+  @include respond-to('medium') {
+      display: block;
+  }
+}
+
+ul {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+ul ul,
+ol ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-left: 15px;
+}
+
+ol ol,
+ul ol {
+  list-style-type: lower-latin;
+  list-style-position: inside;
+  margin-left: 15px;
+}
+
+footer {
+  padding: 15px 0;
+  text-align: center;
+  background-color: $white;
+
+  p {
+    color: $disclaimer-color;
+    @include fluid-type(font-size, 320px, 1476px, 11px, 13px);
+  }
+}

@@ -10,7 +10,6 @@ body {
 header {
   z-index: 1;
   width: 100%;
-  display: none;
   @include absolute(top 0 left 0);
   @include respond-to('medium') {
     display: block;
@@ -19,7 +18,10 @@ header {
   h1 {
     float: left;
     color: $white;
-    margin: 20px 0 0 16vw;
+    margin: 15px 0 0 5vw;
+    @include respond-to('small') {
+      margin: 20px 0 0 16vw;
+    }
 
     a {
       @include font-size(32);
@@ -27,12 +29,18 @@ header {
   }
   nav {
     float: right;
-    margin: 30px 10vw 0 0;
+    margin: 30px 5vw 0 0;
+    @include respond-to('small') {
+      margin: 30px 10vw 0 0;
+    }
 
     a {
-      margin-left: 30px;
+      margin-left: 10px;
       display: inline-block;
       @include fluid-type(font-size, 320px, 1476px, 12px, 14px);
+      @include respond-to('small') {
+        margin-left: 30px;
+      }
       &:hover {
         opacity: 0.5;
       }
